@@ -4,7 +4,8 @@ import HeroSection from "./Contents/Home/Herosection";
 // import ServicesSection from "./Contents/Home/ServicesSection";
 import OurServices from "./Contents/Home/OurServices";
 import Contact from "./Contents/Home/Contact";
-import Reviews from "./Contents/Home/Reviews";
+import Page from "./Contents/feedback/page";
+import DisplayFeedback from "./Contents/feedback/DisplayFeedback";
 
 export default function Home() {
   return (
@@ -12,7 +13,8 @@ export default function Home() {
       <HeroSection/>
       <OurServices/>
       <Contact/>
-      <Reviews/>
+      <Page/>
+      <DisplayFeedback/>
     </div>
   );
 }

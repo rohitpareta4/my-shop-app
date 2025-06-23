@@ -2,6 +2,21 @@
 import { motion } from 'framer-motion';
 
 const HeroSection = () => {
+
+  const scrolltodesk = () => {
+    const element = document.getElementById('expert');
+    if (element) {
+      const headerHeight = document.querySelector('header')?.offsetHeight || 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <motion.div 
       className="relative pt-24 pb-16 md:pt-32 md:pb-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-gray-800"
@@ -40,10 +55,8 @@ const HeroSection = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <button className="px-8 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition-all duration-300 transform hover:-translate-y-1">
-            Shop Now
-          </button>
-          <button className="px-8 py-3 border border-blue-400 text-blue-400 hover:bg-blue-400/10 font-medium rounded-lg transition-all duration-300 transform hover:-translate-y-1">
+       
+          <button id='expert' onClick={scrolltodesk} className="px-8 py-3 border border-blue-400 text-blue-400 hover:bg-blue-400/10 font-medium rounded-lg transition-all duration-300 transform hover:-translate-y-1">
             Contact Experts
           </button>
         </motion.div>
@@ -56,3 +69,8 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
+
+  //  <button className="px-8 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition-all duration-300 transform hover:-translate-y-1">
+  //         //   Shop Now
+  //         // </button>
